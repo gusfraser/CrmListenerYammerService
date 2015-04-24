@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="CrmListenerYammerService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+  <WorkerRole name="CrmListenerYammerWorkerRole" vmsize="Small">
+    <ConfigurationSettings>
+           
+      <Setting name="ServiceBus.CRM.Topic" />
+      <Setting name="ServiceBus.CRM.Subscription" />
+      <Setting name="ServiceBus.ConnectionString" />
+    
+      <Setting name="CRM.ConnectionString" />
+
+      <Setting name="CRM.BaseUrl"/>
+
+      <!-- Note - this is not recommended for production; demo code only! 
+      Strongly recommended to use OAuth 2.0 etc. for tokens in production rather than this Global Access Token.. -->
+      <Setting name="Yammer.GlobalAccessToken"/>
+      
+    </ConfigurationSettings>
+  </WorkerRole>
+</ServiceDefinition>
